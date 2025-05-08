@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAOLINIRINA Nomenjanahary Chantal - Communication Numérique & Management de Projet</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #6366f1;
+            transition: width 0.5s ease-in-out;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        .portfolio-modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .portfolio-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #6366f1;
+            cursor: pointer;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #6366f1;
+            cursor: pointer;
+        }
+        .skill-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-gray-800">
+                    <span class="text-primary">R.</span>N. Chantal
+                </a>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="nav-link active text-gray-800 hover:text-primary transition-colors">Accueil</a>
+                    <a href="#a-propos" class="nav-link text-gray-800 hover:text-primary transition-colors">À propos</a>
+                    <a href="#portfolio" class="nav-link text-gray-800 hover:text-primary transition-colors">Portfolio</a>
+                    <a href="#competences" class="nav-link text-gray-800 hover:text-primary transition-colors">Compétences</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white h-full w-64 p-6 shadow-lg transform transition-transform">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-xl font-bold">Menu</span>
+                <button class="w-8 h-8 flex items-center justify-center text-gray-700">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="#accueil" class="py-2 text-gray-800 hover:text-primary transition-colors">Accueil</a>
+                <a href="#a-propos" class="py-2 text-gray-800 hover:text-primary transition-colors">À propos</a>
+                <a href="#portfolio" class="py-2 text-gray-800 hover:text-primary transition-colors">Portfolio</a>
+                <a href="#competences" class="py-2 text-gray-800 hover:text-primary transition-colors">Compétences</a>
+                <a href="#contact" class="py-2 text-gray-800 hover:text-primary transition-colors">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative pt-24 pb-20 md:pt-32 md:pb-28" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20digital%20communication%20workspace%20with%20soft%20gradient%20background%2C%20elegant%20desk%20setup%20with%20minimalist%20design%2C%20soft%20lighting%2C%20pastel%20colors%2C%20clean%20and%20airy%20atmosphere%2C%20perfect%20for%20portfolio%20hero%20section&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    Communication Numérique & Management de Projet
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">
+                    Experte en stratégies de communication digitale et gestion de projets innovants. Je transforme vos idées en solutions concrètes et impactantes.
+                </p>
+                <a href="#portfolio" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-lg hover:bg-primary/90 transition-colors whitespace-nowrap">
+                    Découvrir mon travail
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="a-propos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">À propos de moi</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/5">
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <img src="raolinirinanomenjanaharychantal.PNG" alt="RAOLINIRINA Nomenjanahary Chantal" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                
+                <div class="md:w-3/5">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">RAOLINIRINA Nomenjanahary Chantal</h3>
+                    <p class="text-gray-700 mb-6">
+                        Passionnée par la communication numérique et le management de projet.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Diplômée de licence en Information communication multimedia .
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Formation</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="ri-graduation-cap-line ri-lg text-primary mt-1 mr-2"></i>
+                                    <span>Licence en Rélation publiques et communication organisationelle, Université de l'EMIT (2024)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-award-line ri-lg text-primary mt-1 mr-2"></i>
+                                    <span>Certification en informatique,2020</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-book-open-line ri-lg text-primary mt-1 mr-2"></i>
+                                    <span>BACCALAUREAT (2021)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Expérience</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="ri-briefcase-line ri-lg text-primary mt-1 mr-2"></i>
+                                    <span>RESPONSABLE DE COMMUNICATION |
+                                        DREN AMORON’I MANIA
+                                        24 Juin 2024 - 20 septembre 2024
+                                        Stage pour obtenir le diplôme de Licence
+                                        professionnel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-briefcase-line ri-lg text-primary mt-1 mr-2"></i>
+                                    <span>COMMUNITY MANAGER | ONG NDAO
+                                        HIFANOSIKA
+                                        19 Juin 2023 - 19 août 2023</span>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-lg hover:bg-primary/90 transition-colors whitespace-nowrap">
+                        Me contacter
+                        <i class="ri-mail-line ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mon Portfolio</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Découvrez une sélection de mes projets en communication numérique et management de projet.
+                </p>
+            </div>
+            
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex bg-white p-1 rounded-full shadow-sm">
+                    <button class="portfolio-filter active px-5 py-2 text-sm font-medium text-white bg-primary rounded-full whitespace-nowrap" data-filter="all">Tous</button>
+                    <button class="portfolio-filter px-5 py-2 text-sm font-medium text-gray-700 hover:text-primary rounded-full whitespace-nowrap" data-filter="communication">Communication</button>
+                    <button class="portfolio-filter px-5 py-2 text-sm font-medium text-gray-700 hover:text-primary rounded-full whitespace-nowrap" data-filter="management">Management</button>
+                    <button class="portfolio-filter px-5 py-2 text-sm font-medium text-gray-700 hover:text-primary rounded-full whitespace-nowrap" data-filter="digital">Digital</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projet 1 -->
+                <div class="portfolio-item group bg-white rounded-lg overflow-hidden shadow-md transition-all" data-category="communication">
+                    <div class="relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20digital%20marketing%20campaign%20with%20social%20media%20graphics%2C%20analytics%20dashboards%2C%20and%20creative%20content%20planning%20materials%20on%20a%20clean%20workspace%2C%20professional%20marketing%20project&width=800&height=600&seq=3&orientation=landscape" alt="Campagne de Communication Digitale" class="w-full h-64 object-cover object-top transition-transform duration-500">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <button class="view-project px-4 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors" data-project="1">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Campagne de Communication Digitale</h3>
+                        <p class="text-gray-700 mb-4">Stratégie et mise en œuvre d'une campagne de communication multicanale pour le lancement d'un nouveau produit.</p>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Communication</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="portfolio-item group bg-white rounded-lg overflow-hidden shadow-md transition-all" data-category="management">
+                    <div class="relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=project%20management%20workspace%20with%20kanban%20board%2C%20team%20collaboration%2C%20gantt%20charts%2C%20and%20planning%20documents%2C%20professional%20organized%20desk%20with%20project%20planning%20materials&width=800&height=600&seq=4&orientation=landscape" alt="Gestion de Projet Agile" class="w-full h-64 object-cover object-top transition-transform duration-500">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <button class="view-project px-4 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors" data-project="2">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Gestion de Projet Agile</h3>
+                        <p class="text-gray-700 mb-4">Implémentation d'une méthodologie Agile pour optimiser le développement d'une plateforme e-commerce.</p>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 -->
+                <div class="portfolio-item group bg-white rounded-lg overflow-hidden shadow-md transition-all" data-category="digital">
+                    <div class="relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=website%20redesign%20project%20with%20UI%2FUX%20design%20elements%2C%20wireframes%2C%20color%20palettes%2C%20and%20responsive%20layouts%20on%20designers%20desk%2C%20professional%20digital%20design%20project&width=800&height=600&seq=5&orientation=landscape" alt="Refonte de Site Web" class="w-full h-64 object-cover object-top transition-transform duration-500">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <button class="view-project px-4 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors" data-project="3">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Refonte de Site Web</h3>
+                        <p class="text-gray-700 mb-4">Conception et déploiement d'un nouveau site web responsive avec amélioration de l'expérience utilisateur.</p>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Digital</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 -->
+                <div class="portfolio-item group bg-white rounded-lg overflow-hidden shadow-md transition-all" data-category="communication">
+                    <div class="relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=social%20media%20content%20creation%20workspace%20with%20smartphone%2C%20tablet%2C%20camera%2C%20and%20creative%20materials%2C%20content%20calendar%20and%20analytics%20reports%20visible%2C%20professional%20social%20media%20management%20setup&width=800&height=600&seq=6&orientation=landscape" alt="Stratégie de Médias Sociaux" class="w-full h-64 object-cover object-top transition-transform duration-500">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <button class="view-project px-4 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors" data-project="4">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Stratégie de Médias Sociaux</h3>
+                        <p class="text-gray-700 mb-4">Élaboration et mise en œuvre d'une stratégie de contenu pour les réseaux sociaux d'une marque de luxe.</p>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Communication</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 5 -->
+                <div class="portfolio-item group bg-white rounded-lg overflow-hidden shadow-md transition-all" data-category="management">
+                    <div class="relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=corporate%20event%20planning%20workspace%20with%20event%20timeline%2C%20venue%20layouts%2C%20budget%20spreadsheets%2C%20and%20marketing%20materials%2C%20professional%20event%20management%20project&width=800&height=600&seq=7&orientation=landscape" alt="Organisation d'Événement Corporate" class="w-full h-64 object-cover object-top transition-transform duration-500">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <button class="view-project px-4 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors" data-project="5">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Organisation d'Événement Corporate</h3>
+                        <p class="text-gray-700 mb-4">Planification et coordination d'un événement d'entreprise pour 500 participants avec gestion complète du projet.</p>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 6 -->
+                <div class="portfolio-item group bg-white rounded-lg overflow-hidden shadow-md transition-all" data-category="digital">
+                    <div class="relative overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=digital%20marketing%20analytics%20dashboard%20with%20data%20visualization%2C%20performance%20metrics%2C%20and%20campaign%20results%20on%20computer%20screens%2C%20professional%20marketing%20analytics%20workspace&width=800&height=600&seq=8&orientation=landscape" alt="Analyse de Performance Digitale" class="w-full h-64 object-cover object-top transition-transform duration-500">
+                        <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <button class="view-project px-4 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors" data-project="6">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Analyse de Performance Digitale</h3>
+                        <p class="text-gray-700 mb-4">Mise en place d'un système d'analyse de données pour optimiser les performances marketing d'une entreprise.</p>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">Digital</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Modals -->
+    <div id="project-modal-1" class="portfolio-modal fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black bg-opacity-75"></div>
+        <div class="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <button class="close-modal absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                <i class="ri-close-line ri-lg"></i>
+            </button>
+            <div class="p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Campagne de Communication Digitale</h3>
+                <img src="https://readdy.ai/api/search-image?query=comprehensive%20digital%20marketing%20campaign%20with%20social%20media%20posts%2C%20email%20templates%2C%20website%20banners%2C%20and%20analytics%20reports%20displayed%20on%20multiple%20screens%2C%20professional%20marketing%20project%20with%20detailed%20elements&width=1200&height=800&seq=9&orientation=landscape" alt="Campagne de Communication Digitale" class="w-full h-auto rounded-lg mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Client</h4>
+                        <p class="text-gray-700">Maison Lumière, marque de cosmétiques bio</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Durée</h4>
+                        <p class="text-gray-700">3 mois (Janvier - Mars 2024)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Rôle</h4>
+                        <p class="text-gray-700">Directrice de Communication</p>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">Description du projet</h4>
+                    <p class="text-gray-700 mb-4">
+                        Pour le lancement de la nouvelle gamme de soins "Éclat Naturel" de Maison Lumière, j'ai conçu et mis en œuvre une stratégie de communication digitale complète visant à augmenter la notoriété de la marque et générer des ventes.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        La campagne s'est déployée sur plusieurs canaux : réseaux sociaux (Instagram, Facebook, TikTok), emailing, publicité en ligne et relations influenceurs. Une approche storytelling mettant en avant les ingrédients naturels et l'engagement écologique de la marque a été privilégiée.
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="font-semibold text-gray-900 mb-2">Résultats</h4>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Augmentation de 45% du trafic sur le site web</li>
+                        <li>+12 000 nouveaux abonnés sur Instagram</li>
+                        <li>Taux d'engagement moyen de 4,8% sur les publications</li>
+                        <li>ROI de 320% sur les investissements publicitaires</li>
+                        <li>Ventes dépassant de 30% les objectifs initiaux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mes Compétences</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Un aperçu de mes compétences techniques et managériales en communication numérique et gestion de projet.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Compétences Techniques -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-code-line text-primary"></i>
+                        </div>
+                        Compétences Techniques
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Stratégie de Communication Digitale</span>
+                                <span class="text-gray-600">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Gestion des Réseaux Sociaux</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">SEO / SEM</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Analyse de Données</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Content Marketing</span>
+                                <span class="text-gray-600">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-instagram-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Instagram</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-facebook-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Facebook</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-linkedin-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">LinkedIn</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-google-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Google Ads</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Email Marketing</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-line-chart-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compétences Managériales -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-team-line text-primary"></i>
+                        </div>
+                        Compétences Managériales
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Gestion de Projet</span>
+                                <span class="text-gray-600">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Leadership d'Équipe</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Gestion du Budget</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Méthodes Agiles</span>
+                                <span class="text-gray-600">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-800">Résolution de Problèmes</span>
+                                <span class="text-gray-600">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-calendar-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Planification</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-chat-4-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Communication</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-time-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Gestion du Temps</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-group-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Travail d'Équipe</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-presentation-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Présentation</span>
+                        </div>
+                        
+                        <div class="skill-card bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-customer-service-line text-primary"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-800">Relation Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Langues</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-france-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Français</h4>
+                        <p class="text-gray-700">Courant (C1)</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-english-input text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Anglais</h4>
+                        <p class="text-gray-700">Courant (C2)</p>
+                    </div>
+                    
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-global-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Malagasy</h4>
+                        <p class="text-gray-700">Langue maternelle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Me Contacter</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Vous avez un projet en communication numérique ou besoin d'un expert en gestion de projet ? N'hésitez pas à me contacter.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nom</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/30" placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/30" placeholder="Votre email">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/30" placeholder="Sujet de votre message">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/30" placeholder="Votre message"></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="relative inline-block w-10 mr-2 align-middle">
+                                <input type="checkbox" id="toggle" class="sr-only peer">
+                                <div class="w-10 h-5 bg-gray-300 rounded-full peer peer-checked:bg-primary peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
+                            </div>
+                            <label for="toggle" class="text-sm text-gray-700">J'accepte de recevoir des communications par email</label>
+                        </div>
+                        
+                        <button type="submit" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-lg hover:bg-primary/90 transition-colors whitespace-nowrap">
+                            Envoyer le message
+                            <i class="ri-send-plane-line ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Informations de Contact</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-1">Email</h4>
+                                    <p class="text-gray-700">chantalraolinirina@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-1">Téléphone</h4>
+                                    <p class="text-gray-700">0348057609</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-map-pin-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-1">Localisation</h4>
+                                    <p class="text-gray-700">Andrainjato Fianarantsoa</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-900 mb-4">Réseaux Sociaux</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-linkedin-line"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">RAOLINIRINA Nomenjanahary Chantal</h3>
+                    <p class="text-gray-400 mb-6">
+                        Experte en communication numérique et management de projet, je vous accompagne dans la réalisation de vos projets digitaux avec passion et professionnalisme.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#a-propos" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#competences" class="text-gray-400 hover:text-white transition-colors">Compétences</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informations Légales</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2025 RAOLINIRINA Nomenjanahary Chantal. Tous droits réservés.
+                </p>
+                <a href="#accueil" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+                    <i class="ri-arrow-up-line"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.querySelector('button.md\\:hidden');
+            const mobileMenu = document.querySelector('.fixed.inset-0.bg-black');
+            const closeButton = document.querySelector('.fixed.inset-0 button');
+            
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            closeButton.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Portfolio filtering
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('text-gray-700');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    this.classList.remove('text-gray-700');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Portfolio modal
+            const viewProjectButtons = document.querySelectorAll('.view-project');
+            const closeModalButtons = document.querySelectorAll('.close-modal');
+            
+            viewProjectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(`project-modal-${projectId}`);
+                    
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.portfolio-modal');
+                    
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Close modal when clicking outside
+            const modals = document.querySelectorAll('.portfolio-modal');
+            
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Active navigation link based on scroll position
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function setActiveLink() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveLink);
+            
+            // Form validation
+            const contactForm = document.querySelector('form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const nameInput = document.getElementById('name');
+                    const emailInput = document.getElementById('email');
+                    const messageInput = document.getElementById('message');
+                    
+                    let isValid = true;
+                    
+                    if (!nameInput.value.trim()) {
+                        isValid = false;
+                        nameInput.classList.add('border-red-500');
+                    } else {
+                        nameInput.classList.remove('border-red-500');
+                    }
+                    
+                    if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+                        isValid = false;
+                        emailInput.classList.add('border-red-500');
+                    } else {
+                        emailInput.classList.remove('border-red-500');
+                    }
+                    
+                    if (!messageInput.value.trim()) {
+                        isValid = false;
+                        messageInput.classList.add('border-red-500');
+                    } else {
+                        messageInput.classList.remove('border-red-500');
+                    }
+                    
+                    if (isValid) {
+                        // Form submission logic would go here
+                        alert('Votre message a été envoyé avec succès !');
+                        contactForm.reset();
+                    }
+                });
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+</body>
+</html>
